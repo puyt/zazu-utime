@@ -1,0 +1,32 @@
+{
+  "name": "zazu-utime",
+  "version": "1.0.0",
+  "description": "Convert unix timestamps to human readable dates and vice versa.",
+  "blocks": {
+    "input": [
+      {
+        "id": "StringToTimestamp",
+        "type": "RootScript",
+        "script": "src/string.js",
+        "connections": [
+          "Copy"
+        ]
+      },
+      {
+        "id": "TimestampToString",
+        "type": "RootScript",
+        "script": "src/timestamp.js",
+        "connections": [
+          "Copy"
+        ]
+      }
+    ],
+    "output": [
+      {
+        "id": "Copy",
+        "type": "CopyToClipboard",
+        "text": "{value}"
+      }
+    ]
+  }
+}
