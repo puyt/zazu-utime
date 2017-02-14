@@ -2,7 +2,7 @@
 const dateUtil = require('date-util')
 
 // default output format
-const defaultOutputFormat = 'dd/mm/yyyy HH:mm:ss';
+const defaultOutputFormat = 'dd/mm/yyyy HH:MM:ss';
 
 
 module.exports = (pluginContext) => {
