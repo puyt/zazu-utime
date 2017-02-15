@@ -1,5 +1,5 @@
 // load package date-util
-const dateUtil = require('date-util')
+require('date-util')
 
 // default in seconds
 const defaultTimestampUnit = 'seconds';

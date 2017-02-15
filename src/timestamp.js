@@ -1,5 +1,5 @@
 // load date-util
-const dateUtil = require('date-util')
+require('date-util')
 
 // default output format
 const defaultOutputFormat = 'dd/mm/yyyy HH:MM:ss';
@@ -8,7 +8,7 @@ const defaultOutputFormat = 'dd/mm/yyyy HH:MM:ss';
 module.exports = (pluginContext) => {
   return {
     respondsTo: (query) => {
-      return query.match(/[0-9]{10,13}/)
+      return !isNaN(parseFloat(query)) && isFinite(query)
     },
     search: (query, env = {}) => {
       return new Promise((resolve, reject) => {
