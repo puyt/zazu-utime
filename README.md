@@ -55,7 +55,7 @@ Add `puyt/zazu-utime` inside of `plugins` block of your  `~/.zazurc.json` file.
 
 
 ## Acknowledgments
-Most the plugin it's :muscle: is coming from [Sugarjs](https://sugarjs.com/)
+Most of the plugin it's :muscle: is coming from [Sugarjs](https://sugarjs.com/)
 
 
 ## See also
