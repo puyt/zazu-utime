@@ -4,18 +4,39 @@ require('../libs/sugar-date')
 module.exports = (pluginContext) => {
     return {
         respondsTo: (query) => {
-            return query.match(/./)
+            return true
         },
         search: (query = '', env = {}) => {
-            // trim & convert to lowercase query string
-            query = query.toLowerCase().trim();
+            // check if timestamp given
+            let isTimestamp = !isNaN(parseFloat(query)) && isFinite(query);
 
             // default settings
+            let outputFormat = env['outputFormat'] || '{full}';
             let timestampUnit = 'seconds';
 
             // override timestamp unit
             if (env['timestampUnit'] && env['timestampUnit'] == 'milliseconds') {
                 timestampUnit = 'milliseconds';
+            }
+
+            // check if string or timestamp is given
+            if (!isTimestamp) {
+                // handle timestamp unit
+                if (timestampUnit == 'seconds') {
+                    // timestamp in seconds
+                    outputFormat = '{X}';
+                } else {
+                    // timestamp in milliseconds
+                    outputFormat = '{x}';
+                }
+            } else {
+                // parse query
+                query = parseFloat(query);
+
+                // convert given timestamp in seconds to milliseconds
+                if (timestampUnit == 'seconds') {
+                    query *= 1000;
+                }
             }
 
             // create Sugar Date
@@ -26,20 +47,20 @@ module.exports = (pluginContext) => {
                 return Promise.reject();
             }
 
-            // set timestamp format
-            let timestampFormat = timestampUnit == 'milliseconds' ? '{x}' : '{X}';
+            // set result value
+            const value = Sugar.Date.format(sugarDate, outputFormat);
 
-            // set timestamp
-            const ts = Sugar.Date.format(sugarDate, timestampFormat, {fromUTC: true});
+            // set result subtitle
+            const subtitle = `Select to copy ` + (isTimestamp ? `the formatted date` : `the timestamp in ${timestampUnit}`) + `.`;
 
             // return results
             return new Promise((resolve, reject) => {
                 resolve([
                     {
                         icon: 'fa-clock-o',
-                        title: ts,
-                        subtitle: `Select to copy the timestamp in ${timestampUnit}.`,
-                        value: ts,
+                        title: value,
+                        subtitle: subtitle,
+                        value: value,
                     }
                 ])
             })

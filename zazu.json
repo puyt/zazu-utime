@@ -5,17 +5,9 @@
   "blocks": {
     "input": [
       {
-        "id": "StringToTimestamp",
+        "id": "utime",
         "type": "RootScript",
         "script": "src/string.js",
-        "connections": [
-          "Copy"
-        ]
-      },
-      {
-        "id": "TimestampToString",
-        "type": "RootScript",
-        "script": "src/timestamp.js",
         "connections": [
           "Copy"
         ]
