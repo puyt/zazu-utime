@@ -7,7 +7,7 @@
       {
         "id": "utime",
         "type": "RootScript",
-        "script": "src/string.js",
+        "script": "src/utime.js",
         "connections": [
           "Copy"
         ]

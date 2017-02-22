@@ -8,8 +8,5 @@
     "date"
   ],
   "author": "Puyt",
-  "license": "MIT",
-  "dependencies": {
-    "date-util": "^1.2.1"
-  }
+  "license": "MIT"
 }
