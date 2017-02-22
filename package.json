@@ -1,7 +1,7 @@
 {
   "name": "zazu-utime",
-  "version": "1.0.0",
-  "description": "Convert unix timestamps to human readable dates and vice versa.",
+  "version": "1.1.0",
+  "description": "Convert unix timestamps to human-readable dates and vice versa.",
   "keywords": [
     "zazu",
     "timestamp",
