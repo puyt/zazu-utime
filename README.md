@@ -1,15 +1,19 @@
 ## Zazu-utime
 
-Plugin for [Zazu](http://zazuapp.org/) inspired by this [Chrome extension](https://chrome.google.com/webstore/detail/kpcibgnngaaabebmcabmkocdokepdaki).
+A simple timestamp plugin for [Zazu](http://zazuapp.org/), inspired by this [Chrome extension](https://chrome.google.com/webstore/detail/kpcibgnngaaabebmcabmkocdokepdaki).
 
-## Keywords
-See [date-util](https://www.npmjs.com/package/date-util) for examples.
 
-Added a few custom missing keywords in date-util:
-- today
-- now
-- tomorrow
-- yesterday
+## Usage
+
+Open Zazu and type a timestamp or human-readable date, the plugin will try and translate most of it.
+
+Examples:
+- `now`
+- `today`
+- `1487718000`
+- `the end of next week`
+
+For more examples see https://sugarjs.com/dates/#/Parsing
 
 
 ## Installing
@@ -26,7 +30,7 @@ Add `puyt/zazu-utime` inside of `plugins` block of your  `~/.zazurc.json` file.
 
 ### Variables
 - `timestampUnit`: seconds or milliseconds
-- `outputFormat`: see npm package [date-util](https://www.npmjs.com/package/date-util#date-format)
+- `outputFormat`: see https://sugarjs.com/dates/#/Formatting for all possible options
 
 ~~~ json
 {
@@ -35,7 +39,7 @@ Add `puyt/zazu-utime` inside of `plugins` block of your  `~/.zazurc.json` file.
         "name": "puyt/zazu-utime",
         "variables": {
             "timestampUnit": "milliseconds",
-            "timestampUnit": "yyyy/mm/dd HH:MM:ss"
+            "timestampUnit": "{yyyy}/{MM}/{dd} {HH}:{mm}:{s}"
         }
     }
   ]
@@ -44,13 +48,19 @@ Add `puyt/zazu-utime` inside of `plugins` block of your  `~/.zazurc.json` file.
 
 
 ## Screenshots
-![now](./assets/screenshot_now1.png)
-![now2](./assets/screenshot_now2.png)
-![tomorrow](./assets/screenshot_tomorrow1.png)
-![tomorrow2](./assets/screenshot_tomorrow2.png)
-![friday](./assets/screenshot_friday1.png)
-![friday2](./assets/screenshot_friday2.png)
+![example1](./assets/example1.png)
+![example2](./assets/example2.png)
+![example3](./assets/example3.png)
+![example4](./assets/example4.png)
 
 
-## Uses
-- [date-util](https://www.npmjs.com/package/date-util)
+## Acknowledgments
+Most the plugin it's :muscle: is coming from [Sugarjs](https://sugarjs.com/)
+
+
+## See also
+- [`tinytacoteam/zazu`](http://github.com/tinytacoteam/zazu)
+
+## License
+
+[MIT](LICENSE.md)
