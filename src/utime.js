@@ -57,6 +57,7 @@ module.exports = (pluginContext) => {
             return new Promise((resolve, reject) => {
                 resolve([
                     {
+                        id: 'zazu-utime',
                         icon: 'fa-clock-o',
                         title: value,
                         subtitle: subtitle,
