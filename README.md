@@ -39,7 +39,7 @@ Add `puyt/zazu-utime` inside of `plugins` block of your  `~/.zazurc.json` file.
         "name": "puyt/zazu-utime",
         "variables": {
             "timestampUnit": "milliseconds",
-            "timestampUnit": "{yyyy}/{MM}/{dd} {HH}:{mm}:{s}"
+            "outputFormat": "{yyyy}/{MM}/{dd} {HH}:{mm}:{s}"
         }
     }
   ]
