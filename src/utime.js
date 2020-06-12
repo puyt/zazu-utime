@@ -55,7 +55,7 @@ module.exports = (pluginContext) => {
             const value = Sugar.Date.format(sugarDate, outputFormat);
 
             // set result subtitle
-            const subtitle = `moda do it ! Select to copy ` + (isTimestamp ? `the formatted date` : `the timestamp in ${timestampUnit}`) + `.`;
+            const subtitle = `version:2, moda do it ! Select to copy ` + (isTimestamp ? `the formatted date` : `the timestamp in ${timestampUnit}`) + `.`;
 
             // return results
             return new Promise((resolve, reject) => {
